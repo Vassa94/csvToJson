@@ -42,7 +42,6 @@ resultado.pack(fill=tk.BOTH, expand=True)  # Hacer que el cuadro de texto se aju
 root.title("CSV to JSON Converter")
 
 # establecer el ícono de la ventana
-root.iconbitmap(os.path.join(os.path.dirname(__file__), 'icon.ico'))
 
 firma = Label(root, text="© Ignacio Vassallo, 2023")
 firma.pack(side="bottom")
