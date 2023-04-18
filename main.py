@@ -1,8 +1,10 @@
 import pandas as pd
 import json
 import tkinter as tk
-from tkinter import filedialog
+
+from tkinter import Label, filedialog
 import codecs
+import os
 
 # Función para cargar el archivo CSV
 def cargar_archivo():
@@ -24,7 +26,6 @@ def cargar_archivo():
 
 # Crear la interfaz gráfica de usuario
 root = tk.Tk()
-root.title('Convertir CSV a JSON')
 
 # Botón para cargar el archivo CSV
 cargar_boton = tk.Button(root, text='Cargar archivo CSV', command=cargar_archivo)
@@ -34,6 +35,19 @@ cargar_boton.pack()
 resultado = tk.Text(root, height=20, width=50)
 resultado.config(state=tk.DISABLED, padx=10, pady=10)  # Agregar relleno al cuadro de texto
 resultado.pack(fill=tk.BOTH, expand=True)  # Hacer que el cuadro de texto se ajuste al tamaño de la pantalla
+
+
+
+# establecer el título de la ventana
+root.title("CSV to JSON Converter")
+
+# establecer el ícono de la ventana
+root.iconbitmap(os.path.join(os.path.dirname(__file__), 'icon.ico'))
+
+firma = Label(root, text="© Ignacio Vassallo, 2023")
+firma.pack(side="bottom")
+firma.config(font=("Arial", 10))
+
 
 # Iniciar el loop principal de la GUI
 root.mainloop()
